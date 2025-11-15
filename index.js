@@ -1,10 +1,12 @@
-const  express = require("express");
+const express = require("express");
 const fetch =  require("node-fetch");
 const dotenv = require("dotenv");
 const cors = require("cors");
 
 dotenv.config();
+
 const app = express();
+
 app.use(cors({ origin: "*" }));
 
 app.get("/auth/facebook", (req, res) => {
@@ -55,4 +57,4 @@ app.get('/', (req, res) => {
   res.status(200).send('Server is running')
 })
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen("https://testing-backend-xi.vercel.app", () => console.log("Server running on port 5000"));
