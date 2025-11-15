@@ -45,10 +45,14 @@ app.get("/auth/facebook/callback", async (req, res) => {
 
   // 3. Redirect back to frontend with user data
   const frontendURL =
-    "http://localhost:5173/facebook-success?" +
+    "https://testing-frontend-alpha.vercel.app/facebook-success?" +
     new URLSearchParams(profile).toString();
 
   res.redirect(frontendURL);
 });
+
+app.get('/', (req, res) => {
+  res.status(200).send('Server is running')
+})
 
 app.listen(5000, () => console.log("Server running on port 5000"));
